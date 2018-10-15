@@ -7,8 +7,8 @@ class App extends React.Component {
   render() {
     const users = [
       { id: 1, name: 'Lucas', age: 23 },
-      { id: 1, name: 'Pepe', age: 54 },
-      { id: 1, name: 'Jon', age: 34 }
+      { id: 2, name: 'Pepe', age: 54 },
+      { id: 3, name: 'Jon', age: 34 }
     ];
     return (
       <div className="App">
