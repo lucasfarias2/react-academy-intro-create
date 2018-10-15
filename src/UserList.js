@@ -1,13 +1,20 @@
 import React from 'react';
 
 class UserList extends React.Component {
-  handleOnChange(event) {
+  constructor(props) {
+    super(props);
+    this.state = { searchTerm: '' };
+  }
+
+  handleOnChange = (event) => {
     console.log(event.target.value);
+    this.setState({ searchTerm: event.target.value });
   }
 
   render() {
     return (
       <div>
+        {this.state.searchTerm}
         <form>
           <input
             placeholder="Busca entre los usuarios"
