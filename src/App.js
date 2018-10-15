@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Header from './Header';
 import UserList from './UserList';
+import componentWithLayout from './Layout';
 import './UserList.css';
 
 class App extends React.Component {
@@ -13,7 +13,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header title="Introducción a React" />
         <UserList users={this.state.fetchedUsers} />
       </div>
     );
@@ -26,4 +25,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default componentWithLayout(App);
