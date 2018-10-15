@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header title="Introducción a React!" />
+        <Header title="Introducción a React" />
         <UserList users={this.state.fetchedUsers} />
       </div>
     );
