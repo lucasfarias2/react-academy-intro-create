@@ -14,12 +14,14 @@ class UserList extends React.Component {
   render() {
     return (
       <div>
-        <form>
-          <input
-            placeholder="Busca entre los usuarios"
-            onChange={this.handleOnChange}
-          />
-        </form>
+        <div className="search">
+          <form>
+            <input
+              placeholder="Busca entre los usuarios"
+              onChange={this.handleOnChange}
+            />
+          </form>
+        </div>
         {this.props.users &&
           this.props.users
             .filter(user =>

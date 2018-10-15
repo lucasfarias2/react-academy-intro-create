@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import UserList from './UserList';
+import './UserList.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header title="Introducción a React!" color="red" />
+        <Header title="Introducción a React!" />
         <UserList users={this.state.fetchedUsers} />
       </div>
     );
