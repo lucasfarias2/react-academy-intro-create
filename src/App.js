@@ -4,18 +4,24 @@ import Header from './Header';
 import UserList from './UserList';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { fetchedUsers: null };
+  }
+
   render() {
-    const users = [
-      { id: 1, name: 'Lucas', age: 23 },
-      { id: 2, name: 'Pepe', age: 54 },
-      { id: 3, name: 'Juan', age: 34 }
-    ];
     return (
       <div className="App">
         <Header title="Introducción a React!" color="red" />
-        <UserList users={users} />
+        <UserList users={this.state.fetchedUsers} />
       </div>
     );
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(json => this.setState({ fetchedUsers: json }));
   }
 }
 

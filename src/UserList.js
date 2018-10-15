@@ -3,7 +3,7 @@ import React from 'react';
 class UserList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchTerm: null };
+    this.state = { searchTerm: '' };
   }
 
   handleOnChange = event => {
@@ -19,15 +19,14 @@ class UserList extends React.Component {
             onChange={this.handleOnChange}
           />
         </form>
-        {this.state.searchTerm && this.props.users
-          .filter(user =>
-            user.name
-              .toLowerCase()
-              .includes(this.state.searchTerm.toLowerCase())
-          )
-          .map(user => (
-            <h4 key={user.id}>{user.name}</h4>
-          ))}
+        {this.props.users &&
+          this.props.users
+            .filter(user =>
+              user.name
+                .toLowerCase()
+                .includes(this.state.searchTerm.toLowerCase())
+            )
+            .map(user => <h4 key={user.id}>{user.name}</h4>)}
       </div>
     );
   }
