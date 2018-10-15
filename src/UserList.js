@@ -1,4 +1,5 @@
 import React from 'react';
+import UserCard from './UserCard';
 
 class UserList extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class UserList extends React.Component {
                 .toLowerCase()
                 .includes(this.state.searchTerm.toLowerCase())
             )
-            .map(user => <h4 key={user.id}>{user.name}</h4>)}
+            .map(user => <UserCard key={user.id} {...user} />)}
       </div>
     );
   }
